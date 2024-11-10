@@ -1,0 +1,24 @@
+version: 4.1.13
+steps:
+  - prompt: Focus the browser window.
+    commands:
+      - command: focus-application
+        name: Google Chrome
+  - prompt: Click the "I'm Feeling Lucky" button.
+    commands:
+      - command: hover-text
+        text: I'm Feeling Lucky
+        description: button next to Google Search
+        action: click
+  - prompt: Click the "I'm Feeling Lucky" button.
+    commands:
+      - command: hover-text
+        text: I'm Feeling Lucky
+        description: button next to Google Search
+        action: click
+  - prompt: >-
+      Assert that the page redirects successfully.  # Use the content of the
+      file from the environment
+    commands:
+      - command: assert
+        expect: the page shows "Trending Now - Google Trends"
