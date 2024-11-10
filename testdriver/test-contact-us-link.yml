@@ -1,0 +1,24 @@
+version: 4.1.13
+steps:
+  - prompt: Focus the browser window.
+    commands:
+      - command: focus-application
+        name: Google Chrome
+  - prompt: Scroll down to find the "How Search works" link.
+    commands:
+      - command: hover-text
+        text: How Search works
+        description: link at the bottom of the page
+        action: click
+  - prompt: Click the "How Search works" link.
+    commands:
+      - command: hover-text
+        text: How Search works
+        description: link in the header
+        action: click
+  - prompt: >-
+      Assert that the "How Search works" page is loaded.  # Use the content of
+      the file from the environment
+    commands:
+      - command: assert
+        expect: How Google Search works page is loaded
