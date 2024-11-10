@@ -1,0 +1,16 @@
+version: 4.1.13
+steps:
+  - prompt: Focus the browser window.
+    commands: []
+  - prompt: Click the "Sign in" link.
+    commands:
+      - command: hover-text
+        text: Sign in
+        description: sign in link in the top right corner
+        action: click
+  - prompt: >-
+      Assert that the Sign In page is displayed.  # Use the content of the file
+      from the environment
+    commands:
+      - command: assert
+        expect: the Sign in page is displayed
